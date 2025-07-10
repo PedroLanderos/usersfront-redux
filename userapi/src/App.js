@@ -4,6 +4,7 @@ import Register from './Components/Register'; // ajusta esta ruta si tu carpeta 
 import Login from './Components/Login';
 import { useDispatch } from 'react-redux';
 import { loadFromStorage } from './slices/authSlice';
+import Users from './Components/Users';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/users" element={<Users/>} />
         <Route path="/" element={<Home />} />
       </Routes>
     </Router>
