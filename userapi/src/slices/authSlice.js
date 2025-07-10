@@ -12,7 +12,6 @@ const initialState = {
 };
 
 //crear el slice
-
 const authSlice = createSlice({
     name:'auth',
     initialState,

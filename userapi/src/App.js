@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Register from './Components/Register'; // ajusta esta ruta si tu carpeta es distinta
+import Login from './Components/Login';
+import { useDispatch } from 'react-redux';
+import { loadFromStorage } from './slices/authSlice';
 
 function App() {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadFromStorage());
+  }, [dispatch]);
+
   return (
     <Router>
       <nav>
@@ -12,6 +22,7 @@ function App() {
 
       <Routes>
         <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
       </Routes>
     </Router>
