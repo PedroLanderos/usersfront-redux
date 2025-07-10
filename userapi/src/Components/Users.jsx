@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useGetAllUsersQuery } from '../usersApi'
+import { Link } from 'react-router-dom';
 
 const Users = () => {
 
@@ -26,6 +27,7 @@ const Users = () => {
               <th>Teléfono</th>
               <th>Dirección</th>
               <th>Rol</th>
+              <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
@@ -37,6 +39,9 @@ const Users = () => {
                 <td>{user.telephoneNumber}</td>
                 <td>{user.address}</td>
                 <td>{user.role}</td>
+                <td>
+                  <Link to={`/users/edit/${user.id}`}>Editar</Link>
+                </td>
               </tr>
             ))}
           </tbody>

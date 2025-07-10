@@ -5,6 +5,7 @@ import Login from './Components/Login';
 import { useDispatch } from 'react-redux';
 import { loadFromStorage } from './slices/authSlice';
 import Users from './Components/Users';
+import EditUser from './Components/EditUser';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/users" element={<Users/>} />
         <Route path="/" element={<Home />} />
+        <Route path="/users/edit/:id" element={<EditUser />} />
       </Routes>
     </Router>
   );
